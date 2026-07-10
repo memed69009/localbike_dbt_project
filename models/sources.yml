@@ -1,0 +1,19 @@
+version: 2
+ 
+sources:
+  - name: Local_Bike
+    database: praxis-bond-491514-j9
+    schema: Local_Bike
+    description: >
+      Données brutes de Local Bike (domaines Sales et Production), chargées
+      telles quelles depuis les fichiers sources dans un unique dataset BigQuery.
+    tables:
+      - name: brands
+      - name: categories
+      - name: products
+      - name: orders
+      - name: order_items
+      - name: customers
+      - name: staffs
+      - name: stocks
+      - name: stores
