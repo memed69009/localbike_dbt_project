@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: stg_production__categories
+    description: "This model contains details about the products categories available for sale."
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_production__brands
+    description: "This model contains details about the products brands."
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_production__products
+    description: "This model contains details about the products."
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+          - unique
+          - not_null
+      - name: brand_id
+        description: "Foreign key linking the brand to the corresponding product."
+        tests:
+          - relationships :
+              name: brand_id_foreign_key_in_stg_production__products
+              arguments:
+                to: ref('stg_production__brands')
+                field: brand_id
+      - name: category_id
+        description: "Foreign key linking the category to the corresponding product."
+        tests:
+          - relationships :
+              name: category_id_foreign_key_in_stg_production__products
+              arguments:
+                to: ref('stg_production__categories')
+                field: category_id
+
+  - name: stg_production__stocks
+    description: "This model contains details about the stocks."
+    columns:
+      - name: stock_id
+        description: "Surrogate key generated from store_id and product_id."
+        tests:
+          - not_null
+          - unique
+      - name: store_id
+        description: "Foreign key linking the store to the corresponding product and quantity."
+        tests:
+          - relationships:
+              name: store_id_foreign_key_in_stg_production__products
+              arguments: 
+                to: ref('stg_sales__stores')
+                field: store_id
+      - name: product_id
+        description: "Foreign key linking the product to the corresponding store and quantity."
+        tests:
+          - relationships:
+              name: product_id_foreign_key_in_stg_production__products
+              arguments: 
+                to: ref('stg_production__products')
+                field: product_id_id
