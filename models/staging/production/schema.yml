@@ -67,4 +67,4 @@ models:
               name: product_id_foreign_key_in_stg_production__products
               arguments: 
                 to: ref('stg_production__products')
-                field: product_id_id
+                field: product_id

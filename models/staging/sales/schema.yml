@@ -90,6 +90,7 @@ models:
               name: accepted_values_order_status
               arguments: 
                 values: [1,2,3,4]
+                quote: false
 
   - name: stg_sales__order_items
     description: "This model contains information about each item included in an order, including its price, quantity, and the discount applied."

@@ -1,7 +1,7 @@
 select
     staff_id,
     store_id,
-    manager_id,
+    SAFE_CAST(manager_id AS INT64) as manager_id,
     first_name as staff_first_name,
     last_name as staff_last_name,
     email as staff_email,
