@@ -1,0 +1,14 @@
+version: 2
+ 
+models:
+  - name: int_sales__order_items_enriched
+    description: "Central table in the intermediate layer. Grain: one row per order item (a product sold within an order). 
+                  Enriched with order, store, product, brand, and category attributes. 
+                  Serves as the foundation for the mrt_sales_by_store, mrt_sales_by_product, mrt_customers, and mrt_customer_orders marts."
+    columns:
+      - name: order_item_id
+        description: "This is the primary key, unique identifier for each order_item"
+        tests:
+          - unique
+          - not_null
+      
