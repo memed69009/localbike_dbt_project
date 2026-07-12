@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: int_production__stocks_vs_sales
+    description: "Reconciles available inventory with quantities sold at the product and store level. 
+                  Grain: one row per (store_id, product_id) combination. Used as the base model for the mrt_stock_analysis mart."
+    columns:
+      - name: stock_sales_id
+        description: "Surrogate key generated from store_id and product_id."
+        tests:
+          - unique
+          - not_null
+      - name: stock_quantity
+        description: "Stock quantity for a specific product in a specific store."
+      - name: total_quantity_sold
+        description: "Total quantity of a specific products sold in a specific store"
