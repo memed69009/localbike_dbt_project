@@ -1,0 +1,15 @@
+version : 2
+
+models:
+  - name: mrt_stock_analysis
+    description: "Reconciliation of available inventory and actual sales, by product and store. Grain: one row per (store_id, product_id) combination.
+                  Addresses inventory management : identification of stockout risks."
+    columns:
+      - name: sales_to_stock_ratio
+        description: "Simplified inventory turnover indicator calculated as total_quantity_sold / current_stock_quantity. 
+        Higher values indicate faster stock turnover and potential replenishment needs, while lower values may indicate slow-moving inventory or overstock. 
+        Based on cumulative sales and current stock, not a time-based turnover ratio."
+
+      - name: is_stockout_risk
+        description: "Indicates whether a product is at risk of stockout. 
+                      Returns true when the current stock quantity is zero and the product has recorded sales, suggesting demand cannot be met with the available inventory."
