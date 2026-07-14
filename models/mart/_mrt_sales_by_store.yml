@@ -1,0 +1,14 @@
+
+version: 2
+ 
+models:
+  - name: mrt_sales_by_store
+    description: "Monthly commercial performance by store. Grain: one row per (store_id, month) combination.
+                  Addresses store performance : total revenue, average basket value, and seasonality."
+    columns:
+      - name: total_revenue
+        description: "Total monthly revenue by store (discounts included)."
+       
+      - name: total_orders
+        description: "Total orders by store each month"
+          

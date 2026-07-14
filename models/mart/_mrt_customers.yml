@@ -1,0 +1,21 @@
+version: 2
+ 
+models:
+- name: mrt_customers
+  description: "Customer behavior and value analysis. Grain: One row per customer.
+                Addresses customer behavior and value : average order value, purchase frequency, and segmentation."
+  
+  columns:
+    - name: avg_order_value
+      description: "Average order value calculated as total_revenue / total_orders.
+                    Represents the average revenue generated per order."
+      
+    - name: customer_segment
+      description:  "Customer segment based on the total number of orders. 
+                     Classifies customers as no_purchase, one_time, recurring, or loyal based on their purchase frequency."
+      tests:
+        - accepted_values:
+            name : accepted_values_customer_segment
+            arguments:
+              values: ['no_purchase', 'one_time', 'recurring', 'loyal']
+ 

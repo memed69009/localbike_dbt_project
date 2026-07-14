@@ -1,0 +1,13 @@
+version: 2
+ 
+models:
+- name: mrt_sales_by_product
+  description: "Product Analysis: Revenue, units sold, and discount impact, by product, brand, and category.
+                Grain: One row per product.
+                Since no cost data is available in the source dataset, this model calculates revenue, not actual profit margin."
+  columns:
+    - name: avg_unit_price_sold
+      description: "average unit price for each product"
+    
+    - name: avg_discount
+      description: "Average discount applied on each product (between 0 & 1)" 
