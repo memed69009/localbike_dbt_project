@@ -91,7 +91,7 @@ Chaque axe retenu sera traduit en un ou plusieurs modèles **marts** dans le pro
 | Performance par magasin | `mrt_sales_by_store` |
 | Analyse produit | `mrt_sales_by_product` |
 | Gestion des stocks | `mrt_stock_analysis` |
-| Comportement client | `mrt_customers` + `mrt_customer_orders` |
+| Comportement client | `mrt_customers`  |
 
 ---
 
