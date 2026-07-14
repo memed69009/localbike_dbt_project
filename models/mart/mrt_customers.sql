@@ -13,12 +13,11 @@ with customer_orders as (
 ) 
 
 select
-    c.customer_id,
-    c.first_name,
-    c.last_name,
-    c.city,
-    c.state,
-
+    c.customer_id, 
+    c.customer_first_name,
+    c.customer_last_name,
+    c.customer_city,
+    c.customer_state,
     coalesce(co.total_orders, 0) as total_orders,
     coalesce(co.total_revenue, 0) as total_revenue,
     round(

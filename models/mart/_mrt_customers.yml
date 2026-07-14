@@ -15,5 +15,7 @@ models:
                      Classifies customers as no_purchase, one_time, recurring, or loyal based on their purchase frequency."
       tests:
         - accepted_values:
-            values: ['no_purchase', 'one_time', 'recurring', 'loyal']
+            name : accepted_values_customer_segment
+            arguments:
+              values: ['no_purchase', 'one_time', 'recurring', 'loyal']
  
