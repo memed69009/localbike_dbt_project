@@ -95,12 +95,6 @@ Chaque axe retenu sera traduit en un ou plusieurs modèles **marts** dans le pro
 
 ---
 
-## 5. Prochaines étapes
+## 5. Datavisualisation
 
-1. Import des données brutes dans BigQuery.
-2. Construction des modèles staging (un modèle par table source).
-3. Construction des modèles intermediate (jointures, calculs de marge, agrégations).
-4. Construction des marts correspondant aux 4 axes retenus.
-5. Ajout de tests (unicité, non-null, relations) et documentation dbt.
-6. Publication du projet sur GitHub pour peer-review.
-7. Visualisation des insights dans l'outil de BI choisi.
+Rapport PowerBi :  https://app.fabric.microsoft.com/links/TTFSwsnDCu?ctid=559aa8ea-1a23-4071-874d-0aa9b1794341&pbi_source=linkShare
